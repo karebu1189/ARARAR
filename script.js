@@ -1,6 +1,6 @@
 // MediapipeのHandsとCameraを読み込む
-import { Hands } from 'https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js';
-import { Camera } from 'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js';
+import { Hands } from 'https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1635982362/hands.js';
+import { Camera } from 'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.4.1635982362/camera_utils.js';
 
 const video = document.getElementById('camera');
 const canvas = document.getElementById('game');
@@ -19,7 +19,7 @@ let obj = { x: canvas.width/2, y: canvas.height/2, size: 50 };
 
 // Mediapipe Hands初期化
 const hands = new Hands({
-  locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+  locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1635982362/${file}`
 });
 
 hands.setOptions({
@@ -49,7 +49,6 @@ cameraInstance.start();
 
 // ゲームループ
 function gameLoop() {
-  // Canvasクリア
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // 赤い四角描画
@@ -58,5 +57,4 @@ function gameLoop() {
 
   requestAnimationFrame(gameLoop);
 }
-
 gameLoop();
